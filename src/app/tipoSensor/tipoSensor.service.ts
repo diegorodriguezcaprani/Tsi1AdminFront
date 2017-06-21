@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Rx';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/catch';
 import { TipoSensor } from '../tipoSensor/tipoSensor';
+import { GeneralService } from 'app/utils/general-service.service';
+import { Ciudad } from 'app/model/ciudad';
 /**
  * Service for notify and subscribe to events.
  */
@@ -12,8 +14,9 @@ import { TipoSensor } from '../tipoSensor/tipoSensor';
 @Injectable()
 export class TipoSensorService {
     private baseUrl: string = 'http://proyectotsi1.azurewebsites.net/api/Tipos';
-    constructor(private http: Http) {
+    constructor(private http: Http, private general: GeneralService) {
         console.log('constructor');
+        this.baseUrl = this.general.getCity().url + 'Tipos';
     }
 
     public addTipoSensor(tipoSensor: TipoSensor): any{
@@ -28,7 +31,7 @@ export class TipoSensorService {
     }
 
     public getTipoSensor(): Observable<TipoSensor[]> {
-        return this.http.get('http://proyectotsi1.azurewebsites.net/api/Tipos').map(res => <TipoSensor[]>res.json() as TipoSensor[]);
+        return this.http.get(this.baseUrl).map(res => <TipoSensor[]>res.json() as TipoSensor[]);
     }
 
     public getEmpleados(): TipoSensor[] {

@@ -16,26 +16,27 @@ import { Ciudad } from 'app/model/ciudad';
 @Injectable()
 export class ChatService {
     private baseUrl: string;
+    private city: Ciudad;
 
     constructor(private http: Http,private general:GeneralService) {
         console.log('constructor');
-        let city: Ciudad = general.getCity();
-        this.baseUrl = city.url + 'Chat';
+        this.city = general.getCity();
+        this.baseUrl = this.city.url;
     }
 
-    public addChat(chat: ChatUsuario) : any{
-        return this.http.post('http://tareatsi1ciudad1.azurewebsites.net/api/Chat/Agrupacion', chat);
+    public addChat(chat: ChatUsuario): any{
+        return this.http.post(this.baseUrl+'Chat/Agrupacion', chat);
     }
 
 
     public getChats(): Observable<Chat[]> {
-        return this.http.get(this.baseUrl).map(res => <Chat[]>res.json() as Chat[]);
+        return this.http.get(this.baseUrl + 'Chat').map(res => <Chat[]>res.json() as Chat[]);
     }
 
     public getMessagesChat(chatId: number): any{ 
         let params: URLSearchParams = new URLSearchParams();
         params.set('idChat', chatId.toString());
-        return this.http.get('http://tareatsi1ciudad1.azurewebsites.net/api' + '/Mensajes', { search: params }).map(res => <ChatMsg[]> res.json() as ChatMsg[]);
+        return this.http.get(this.baseUrl + '/Mensajes', { search: params }).map(res => <ChatMsg[]>res.json() as ChatMsg[]);
     }
 
     public getChatUsuario(usuarioId:number){
@@ -47,12 +48,12 @@ export class ChatService {
     public addMessage(chat: ChatUsuario): any {
         // chatid usrid mensaje
         console.log('crear mensaje: ', chat);
-        return this.http.post('http://tareatsi1ciudad1.azurewebsites.net/api' + '/Mensajes', chat);
+        return this.http.post(this.baseUrl + '/Mensajes', chat);
     }
 
     public agregarUsuarioChat(chat: ChatUsuario): any {
         // chatid usrid 
-        return this.http.post(this.baseUrl+'Usuarios', chat);
+        return this.http.post(this.baseUrl+ 'Chat'+'/Usuarios', chat);
     }
 
     private extractData(res: Response) {

@@ -7,6 +7,8 @@ import { Sensor } from 'app/model/sensor';
 import { Valor } from 'app/model/valor';
 import { Motivo } from 'app/model/motivo';
 import { ComentarioPanel } from 'app/model/comentarioPanel';
+import { GeneralService } from 'app/utils/general-service.service';
+import { Ciudad } from 'app/model/ciudad';
 /**
  * Service for notify and subscribe to events.
  */
@@ -17,8 +19,14 @@ export class SensorService {
     private baseUrl: string = 'http://proyectotsi1.azurewebsites.net/api/Sensores';
     private baseUrlValores: string = 'http://tareatsi1ciudad1.azurewebsites.net/api/Valores/';
     private baseUrlMotivos: string = 'http://tareatsi1ciudad1.azurewebsites.net/api/Motivos/';
-    constructor(private http: Http) {
+    private city: Ciudad;
+
+    constructor(private http: Http, private general: GeneralService) {
         console.log('constructor');
+        this.city = this.general.getCity();
+        this.baseUrl = this.city.url + 'Sensores';
+        this.baseUrlMotivos = this.city.url + 'Motivos/';
+        this.baseUrlValores = this.city.url + 'Valores/'
     }
 
     public addSensor(sensor: Sensor) : any{

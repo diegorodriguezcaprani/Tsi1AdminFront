@@ -18,13 +18,14 @@ import { HistoricoEvento } from 'app/model/historico-evento';
 export class EventoService {
     private baseUrl: string ;
     private subscripciones: string;
+    private city: Ciudad;
 
     constructor(private http: Http, private general: GeneralService) {
         console.log('constructor service');
-        let city: Ciudad = general.getCity();
-        console.log('url ciudad: ', city.url);
-        this.baseUrl = city.url + 'Eventos';
-        this.subscripciones = city.url + 'Subscripciones';
+        this.city = general.getCity();
+        console.log('url ciudad: ', this.city.url);
+        this.baseUrl = this.city.url + 'Eventos';
+        this.subscripciones = this.city.url + 'Subscripciones';
     }
 
 
@@ -68,7 +69,7 @@ export class EventoService {
     }
 
     public getHistorico(): Observable<HistoricoEvento[]> {
-        return this.http.get('http://tareatsi1ciudad1.azurewebsites.net/api' + '/HistoricoEventos').map(res => <HistoricoEvento[]>res.json() as HistoricoEvento[]);
+        return this.http.get(this.city.url + 'HistoricoEventos').map(res => <HistoricoEvento[]>res.json() as HistoricoEvento[]);
     }
 
 }

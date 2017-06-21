@@ -2,14 +2,20 @@
 import { Observable } from "rxjs/Rx";
 import { ReporteSensor } from "app/model/reporte-sensor";
 import { Http, Headers, RequestOptions, URLSearchParams } from "@angular/http";
+import { GeneralService } from 'app/utils/general-service.service';
+import { Ciudad } from 'app/model/ciudad';
 
 @Injectable()
 export class ReportesService {
     private tiposUrl: string = 'http://proyectotsi1.azurewebsites.net/api/Tipos';
     private reportUrl: string = 'http://tareatsi1ciudad1.azurewebsites.net/api/Reportes';
+    private city: Ciudad;
 
-  constructor(private http: Http) {
-      console.log('constructor service');
+    constructor(private http: Http, private general: GeneralService) {
+        console.log('constructor service');
+        this.city = general.getCity();
+        this.tiposUrl = this.city.url + 'Tipos';
+        this.reportUrl = this.city.url + 'Reportes';
   }
   
   public getReportesValuesBySensor(fechaIni: string, fechaFin: string): Observable<ReporteSensor[]> {
