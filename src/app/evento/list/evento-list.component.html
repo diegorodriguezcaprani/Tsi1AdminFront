@@ -1,0 +1,34 @@
+﻿
+ 
+
+  
+<div class="container">
+  <a class="btn btn-success" routerLink="/manageEvento" style="margin-left:89%; ">Agregar</a>
+  <div >
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>ChannelName</th>
+          <th>Valor limite</th>
+          <th>Operador</th>
+          <th>Tipo de dato</th>
+          <th>Subscripcion</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let evento of eventos">
+        <tr>
+          <td>{{evento.EventoId}}</td>
+          <td>{{evento.Nombre}}</td>
+          <td>{{evento.ChannelName}}</td>
+          <td>{{evento.ValorLimite}}</td>
+          <td>{{evento.Operador}}</td>
+          <td>{{evento.TipoDato}}</td>
+          <td><a class="btn btn-info" routerLink="/manageEventoSubscripcion">Subscribirse</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

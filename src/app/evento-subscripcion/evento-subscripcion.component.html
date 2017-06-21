@@ -1,0 +1,16 @@
+﻿<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let evento of eventos">
+      <tr>
+        <td>{{evento.EventoId}}</td>
+        <td>{{evento.Nombre}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

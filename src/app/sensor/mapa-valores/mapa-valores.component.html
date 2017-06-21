@@ -1,0 +1,24 @@
+﻿<p>
+  mapa-valores works!
+</p>
+
+
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapClicked($event)"  class="mapa">
+
+  
+  <agm-info-window #ventana>
+    <strong> Se ve algo???????</strong>
+  </agm-info-window>
+
+  <agm-marker #marcadores *ngFor="let m of markers; let i = index"
+              (markerClick)="clickedMarker(m.label, i)"
+              [latitude]="m.lat"
+              [longitude]="m.lng"
+              [label]="m.label"
+              [markerDraggable]="m.draggable"  >
+
+    <agm-info-window>
+      <strong> Se ve algo???????</strong>
+    </agm-info-window>
+  </agm-marker>
+</agm-map>

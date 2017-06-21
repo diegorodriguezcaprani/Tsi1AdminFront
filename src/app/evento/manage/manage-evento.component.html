@@ -1,0 +1,44 @@
+﻿
+
+
+<form class="container" (ngSubmit)="onSubmit()" #manageEmployee="ngForm">
+
+    <div class="form-group">
+        <label for="Nombre">Nombre</label>
+        <input [(ngModel)]="model.Nombre" name="Nombre" type="text" class="form-control">
+    </div>
+  <div class="form-group" >
+    <label for="ChannelName"  >Utiliza motivo:</label>
+    <input [(ngModel)]="model.UtilizaMotivo" type="checkbox" name="motivo" class="form-control">
+  </div>
+  <div class="form-group" *ngIf="model.UtilizaMotivo" >
+    <label for="power">Motivo:</label>
+    <select    class="form-control" name="Operador" [(ngModel)]="model.MotivoId"  >
+      <option *ngFor="let motivo of motivos"    [ngValue]="motivo.MotivoId">
+        {{motivo.Nombre}}
+      </option>
+    </select>
+  </div>
+    <div class="form-group" *ngIf="!model.UtilizaMotivo">
+      <label for="ValorLimite">ValorLimite</label>
+      <input [(ngModel)]="model.ValorLimite" type="text" name="ValorLimite" class="form-control">
+    </div>
+    <div class="form-group" *ngIf="!model.UtilizaMotivo">
+        <label for="power">Operador</label>
+        <select class="form-control"  name="Operador" [(ngModel)]="model.Operador">
+          <option *ngFor="let tipoOp of tiposOperador">
+            {{tipoOp}}
+          </option>
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="power">Tipo</label>
+      <select class="form-control" name="Operador" [(ngModel)]="model.TipoDato">
+        <option *ngFor="let tipoDato of tiposDato" [ngValue]="tipoDato.Id">
+          {{tipoDato.Nombre}}
+        </option>
+      </select>
+    </div>
+        <button    type="submit" class="btn btn-success">Agregar</button>
+</form>
+

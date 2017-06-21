@@ -1,0 +1,38 @@
+﻿
+
+
+
+<form class="container" (ngSubmit)="onSubmit()" #manageEmployee="ngForm">
+
+    <div class="form-group">
+        <label for="Name">Descripcion</label>
+        <input [(ngModel)]="model.Descripcion" name="name" class="form-control">
+    </div>
+  <agm-map [latitude]="model.Latitud" [longitude]="model.Longitud" [zoom]="5" (mapClick)="mapClicked($event)" class="mapa">
+    <agm-marker 
+                [(latitude)]="model.Latitud"
+                [(longitude)]="model.Longitud"
+                [label]="'Nuevo sensor'"
+                [markerDraggable]=true
+                >
+    </agm-marker>
+  </agm-map>
+    <div class="form-group formBottom">
+        <label for="Latitud">Latitud</label>
+        <input [(ngModel)]="model.Latitud" type="number" name="Latitud" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="Longitud">Longitud</label>
+      <input [(ngModel)]="model.Longitud" type="number" name="Longitud" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="power">Tipo</label>
+        <select class="form-control"  name="Tipo" [(ngModel)]="model.Tipo">
+          <option *ngFor="let tipo of tipos" [value]="tipo.Id">
+            {{tipo.Nombre}}
+          </option>
+        </select>
+    </div>
+        <button type="submit" class="btn btn-success">Agregar</button>
+</form>
+

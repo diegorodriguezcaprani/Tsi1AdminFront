@@ -1,0 +1,74 @@
+﻿
+.header {
+  padding: 0px !important;
+  
+  
+}
+
+.navbar {
+  padding: 0px !important;
+  margin: 0px !important;
+  margin-bottom: -100px !important;
+}
+
+
+.userIcon {
+  position: absolute;
+  left: 30%;
+  top:15%;
+  margin-left: -50px !important; /* 50% of your logo width */
+  display: block;
+}
+
+
+
+
+.userName {
+  position: absolute;
+  left: 73%;
+  top: 10%;
+  margin-left: -50px !important; /* 50% of your logo width */
+  display: block;
+}
+
+
+.cityIcon {
+  position: absolute;
+  left: 10%;
+  top: 15%;
+  display: block;
+}
+
+
+
+
+.cityName {
+  position: absolute;
+  left: 13%;
+  top: 10%;
+  display: block;
+}
+
+.cerebroIcon {
+  position: absolute;
+  left: 3%;
+  top: 10%;
+  display: block;
+}
+
+.cerebroName {
+  position: absolute;
+  left: 3%;
+  top: 20%;
+  display: block;
+}
+
+.administrador {
+  font-style: italic;
+  position: absolute;
+  left: 45%;
+  top: 10%;
+  display: block;
+}
+
+

@@ -1,0 +1,32 @@
+﻿
+<table>
+  <tr>
+    <td>
+      <div class="form-group combo">
+       
+        <select class="form-control" name="Operador" [(ngModel)]="alcaldia" (change)="seleccionar()">
+          <option *ngFor="let chat of chats" [ngValue]="chat">
+            {{chat.Nombre}}
+          </option>
+        </select>
+      </div>
+    </td>
+    <td class="textentrada">
+      <b>Agregar nuevo grupo chat</b>
+    </td>
+    <td>
+      <input [(ngModel)]="nombreNuevo" name="Nombre" type="text" class="form-control entrada">
+    </td>
+    <td>
+      <button type="submit" class="btn btn-success agregar" (click)="agregarAlcaldia(nombreNuevo)">Agregar</button>
+    </td>
+  </tr>
+</table>
+
+<app-chat *ngIf="isSeleccionado" [(chat)]="alcaldia" ></app-chat>
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+﻿<div class='container'>
+  <div class="btn-group barra">
+    <button type="button" class="btn" (click)="goSensores()">Sensores <img width="40" height="40" src="https://cdn4.iconfinder.com/data/icons/infographics-3-1/512/scale_1-512.png"></button>
+    <button type="button" class="btn" (click)="goVisualizar()">Visualizar <img width="40" height="40" src="https://cdn4.iconfinder.com/data/icons/flat-icon-set/2133/flat_icons-graficheria.it-01.png"></button>
+    <button type="button" class="btn" (click)="goEventos()">Eventos <img width="40" height="40" src="https://previews.123rf.com/images/myvector/myvector1306/myvector130600361/20236470-Touchscreen-action-icon-Stock-Vector.jpg"></button>
+    <button type="button" class="btn" (click)="goEventosComplejos()">Eventos complejos <img width="40" height="40" src="https://cdn4.iconfinder.com/data/icons/we-re-the-best/512/industry-industrious-hard-complicated-advanced-technology-complex-control-customize-gear-gears-gear_wheel-machine-mechanics-options-preferences-settings-system-tools-work-configuration-configure-control-start-stop-512.png"></button>
+    <button type="button" class="btn" (click)="goReportes()">Reportes <img width="40" height="40" src="https://www.cdc.gov/metrics/images/report_icon.gif"></button>
+    <button type="button" class="btn" (click)="goChat()">Chat <img width="40" height="40" src="https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Messages-512.png"></button>
+    <button type="button" class="btn" (click)="goSubscripciones()">Subscripciones <img width="40" height="40" src="http://www.samsung.com/latin/business/smart-led-signage/images/icon_customized.png"></button>
+    <button type="button" class="btn" (click)="goMapa()">Ver sensores <img width="40" height="40" src="http://www.housebuenosaires.com/wp-content/uploads/google-maps-icon.jpg"></button>
+  </div>
+
+<div class="scrolleable" *ngIf="estaCargado()">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>UsuarioId</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>ChannelName</th>
+        <th>TokenId</th>
+      </tr>
+    </thead>
+    
+    <tbody *ngFor="let us of usuarios" >
+      <tr>
+        <td>{{us.UsuarioId}}</td>
+        <td>{{us.Nombre}}</td>
+        <td>{{us.Apellido}}</td>
+        <td>{{us.ChannelName}}</td>
+        <td>{{us.TokenId}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<footer>
+  <a>Copyright 2017</a>
+</footer>

@@ -1,0 +1,40 @@
+<div class="container">
+  <div class= 'row'>
+    <div class='col-sm-4'>
+      <h4>Elija su tipo de reporte:</h4>
+    </div>
+    <div class='col-sm-4'>
+      <div class="form-group combo">
+          <select class="form-control" name="Operador" [(ngModel)]="reporte" (change)="seleccionar()">
+            <option *ngFor="let rep of opcionReportes" [value]="rep.id">
+              {{rep.tipo}}
+            </option>
+          </select>
+        </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="elegirDate()">
+    <div class="col-sm-3">
+      <h4>Seleccione el periodo</h4>
+    </div>
+    <div class="col-sm-3">
+      <form #myFormStart="ngForm" novalidate>
+        <my-date-picker name="mydateStart" [options]="myDatePickerOptions"
+                      [(ngModel)]="modelStart" required></my-date-picker>
+    </form>
+    </div>
+    <div class="col-sm-3">
+      <form #myFormEnd="ngForm" novalidate>
+        <my-date-picker name="mydateEnd" [options]="myDatePickerOptions" 
+                      [(ngModel)]="modelEnd" required></my-date-picker>
+    </form>
+    </div>
+    <div class="col-sm-3">
+    <button type="button" (click)="mostrar()" class="btn btn-success">Mostrar</button>
+    </div>
+  </div>
+</div>
+
+<app-reports-values-by-sensor *ngIf="mostrar0()" [(dateStart)]="modelStart" [(dateEnd)]="modelEnd" ></app-reports-values-by-sensor>
+<app-reports-cant-values-by-type-sensor *ngIf="mostrar1()" [(dateStart)]="modelStart" [(dateEnd)]="modelEnd" ></app-reports-cant-values-by-type-sensor>
+<app-reports-historics *ngIf="mostrar2()"></app-reports-historics>

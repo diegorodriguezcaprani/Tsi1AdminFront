@@ -1,0 +1,8 @@
+﻿
+ 
+<div class="card card-inverse card-primary mb-3 text-center fondo">
+    <h1 class="titulo">Seleccione una ciudad: </h1>
+    <div class=""*ngFor="let ciudad of ciudades">
+      <a routerLink="/manageEvento" class=" item list-group-item list-group-item-action list-group-item-info" (click)="seleccionarCiudad(ciudad)">{{ciudad.Nombre}}</a>
+    </div>
+</div>

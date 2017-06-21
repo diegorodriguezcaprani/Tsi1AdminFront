@@ -1,0 +1,30 @@
+﻿.Rowm {
+  display: table;
+}
+
+.Colm {
+  display: table-cell;
+}
+
+
+.combo{
+  width:300px;
+  margin:20%;
+}
+
+.entrada {
+  margin-left:2px !important;
+  width: 150px;
+  margin: 20%;
+}
+
+.textentrada {
+  padding-left: 300px;
+  width: auto;
+  margin: 20%;
+}
+
+.agregar {
+  width: 200px;
+  margin: 20%;
+}

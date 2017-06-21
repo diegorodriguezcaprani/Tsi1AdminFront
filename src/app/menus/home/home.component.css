@@ -1,0 +1,27 @@
+﻿
+
+.menuitem{
+  padding-left:100px !important;
+
+}
+
+.body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.barra{
+  padding-top: 3%;
+}
+
+.scrolleable{
+  padding-top: 3%;
+  height: 300px ;
+  overflow-y: hidden ;
+}
+
+footer {
+  position: absolute; 
+  margin-left: 50%;
+  padding-top: 15%;
+}

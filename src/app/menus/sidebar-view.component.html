@@ -1,0 +1,31 @@
+﻿
+
+<div id="sidebar-wrapper" [ngClass]="{'#wrapper.toggled': isClassVisible}">
+  <ul class="sidebar-nav navbar-inverse">
+    <li class="sidebar-brand">
+      <a href="#">
+        Entidades
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['listSensor']">Fuente de datos</a>
+    </li>
+    <li>
+      <a [routerLink]="['listTipoSensor']">Tipo de fuente datos</a>
+    </li>
+    <li>
+      <a [routerLink]="['listEvento']">Eventos</a>
+    </li>
+    <li>
+      <a [routerLink]="['maps']">Subscripcion eventos</a>
+    </li>
+    <li>
+      <a [routerLink]="['reports']">Valores sensores</a>
+    </li>
+    <li>
+      <a href="#">About</a>
+    </li>
+  </ul>
+</div>
+
+

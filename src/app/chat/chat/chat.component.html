@@ -1,0 +1,22 @@
+﻿<div class="container" #scrolling>
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">Chat</div>
+      <div class="panel-body">
+        <div >
+          <div class="row message-bubble" *ngFor="let msg of messages">
+            <p class="text-muted">{{msg}}</p>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="input-group">
+            <input type="text" class="form-control"  [(ngModel)]="mensajeNuevo">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" (click)="enviarMensaje()">Send</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

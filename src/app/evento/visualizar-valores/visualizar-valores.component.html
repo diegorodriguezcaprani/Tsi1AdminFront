@@ -1,0 +1,32 @@
+﻿
+
+
+  <tr>
+    <td><button class="btn btn-default botonSiguiente" type="button" (click)="siguiente()">></button></td>
+    <td><button class="btn btn-default botonAnterior" type="button" (click)="anterior()"><</button></td>
+  </tr>
+  <tr>
+        <img *ngIf="imagenActual!=null"[src]="imagenActual" class="imagen">
+  </tr>
+<tr>
+  <td>
+    <label class="incidenteNombre">Incidente</label>
+  </td>
+  <td>
+    <select class="form-control incidenteCombo" name="Operador" [(ngModel)]="motivoSeleccionado">
+      <option *ngFor="let motivo of motivos"       [ngValue]="motivo">
+        {{motivo.Nombre}}
+      </option>
+    </select>
+  </td>
+  <td>
+      <label  class="comentarioNombre">Comentario:</label>
+      <textarea class="form-control comentario" rows="5" id="comment" [(ngModel)]="comentario"></textarea>
+  </td>
+  <td>
+    <button class="btn enviar btn-lg btn-success" type="button" (click)="enviar()"> Enviar</button>
+  </td>
+</tr>
+
+
+

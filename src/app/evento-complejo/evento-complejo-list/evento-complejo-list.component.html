@@ -1,0 +1,53 @@
+﻿
+
+
+<div class="container">
+
+
+  <div class="Rowm">
+    <div class="Colm">
+      <table class="table table-bordered tabla">
+        <thead>
+          <tr>
+            <th class="col1"></th>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Valor limite</th>
+            <th>Operador</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let evento of eventosSimples">
+          <tr>
+            <td><button type="button" class="btn btn-primary btn-xs col1" (click)="agregar(evento)">add</button></td>
+            <td>{{evento.EventoId}}</td>
+            <td>{{evento.Nombre}}</td>
+            <td>{{evento.ValorLimite}}</td>
+            <td>{{evento.Operador}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="Colm">
+      <div class="seleccionados">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let seleccionado of seleccionados">{{seleccionado.Nombre}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="Colm">
+      <div class="confirmar">
+        <label for="Nombre">Nombre</label>
+        <input (ngModel)="model.Nombre" name="Nombre" type="text" class="form-control entrada"><br><br><br>
+        <button type="button" class="btn btn-primary active btn-lg" (click)="confirmarOr()">OR</button><br><br><br>
+        <button type="button" class="btn btn-primary active btn-lg" (click)="confirmarAnd()">AND</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

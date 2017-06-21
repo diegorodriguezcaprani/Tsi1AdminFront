@@ -1,0 +1,30 @@
+﻿h1 {
+  font-size: 300%;
+  color: #34495e;
+}
+
+.form-group {
+  width: 50%;
+}
+
+
+
+
+.container {
+  margin-right: 25%;
+  margin-left: 25%;
+  padding-top:5%;
+}
+
+
+.mapa {
+  margin-right: 25%;
+  margin-left: 25%;
+  margin-top: 0%;
+  width: 500px;
+  height: 200px;
+}
+
+.formBottom {
+  margin-top: 0%;
+}

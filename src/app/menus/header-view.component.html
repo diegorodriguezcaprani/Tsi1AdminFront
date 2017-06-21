@@ -1,0 +1,29 @@
+﻿
+<div class="header body">
+  <nav class="barra navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <img class="cerebroIcon" src="http://parishworld.org/web/img/home.png" height="35" width="35"  (click)="goHome()"/>
+        <img class="cityIcon" src="https://cdn2.iconfinder.com/data/icons/the-urban-hustle-and-bustle/60/cityskape-128.png" height="30" width="30" />
+        <a class="navbar-brand cityName" *ngIf="city!=null" >{{city.Nombre}}</a>
+        <h4 class="administrador">Administrador</h4>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="nav navbar-nav navbar-right">
+      <div class="dropdown">
+        <a class="btn boton" data-toggle="dropdown" style="width:150px; height:50px">
+          <h4 class="userName">{{user.Nombre}}</h4>
+          <img class="userIcon" src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-128.png" height="30" width="30" />
+        </a>
+        <ul class="dropdown-menu">
+          <li><a (click)="logout()">LOGOUT</a></li>
+        </ul>
+      </div>
+       
+     
+    </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+</div>
+

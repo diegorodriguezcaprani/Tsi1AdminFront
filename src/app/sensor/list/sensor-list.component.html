@@ -1,0 +1,23 @@
+﻿
+ 
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Descripcion</th>
+        <th>Latitud</th>
+        <th>Longitud</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let sensor of sensores">
+      <tr>
+        <td>{{sensor.Id}}</td>
+        <td>{{sensor.Descripcion}}</td>
+        <td>{{sensor.Latitud}}</td>
+        <td>{{sensor.Longitud}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <a class="btn btn-success" routerLink="/manageSensor">Agregar</a>
+</div>

@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\chat",
+    "\\app\\ciudades",
+    "\\app\\evento",
+    "\\app\\menus",
+    "\\app\\menus\\home",
+    "\\app\\pusher",
+    "\\app\\sensor",
+    "\\app\\sensor\\mapa-valores"
+  ],
+  "SelectedNode": "\\app\\model\\valor.ts",
+  "PreviewInSolutionExplorer": false
+}

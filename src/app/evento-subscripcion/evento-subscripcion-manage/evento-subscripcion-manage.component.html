@@ -1,0 +1,40 @@
+﻿<div class="container">
+  <h1>Subscripcion a evento por zona geografica:</h1>
+<div class="Rowm">
+  <div class="Colm">
+    <div class="form-group" style="width:30%;">
+      <label for="power">Evento</label>
+      <select class="form-control" name="Evento" [(ngModel)]="EventoSeleccionado.EventoId">
+        <option *ngFor="let evento of eventos" [value]="evento.EventoId">
+          {{evento.Nombre}}
+        </option>
+      </select>
+    </div>
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapClicked($event)">
+
+
+      <agm-marker *ngFor="let m of markers; let i = index"
+                  (markerClick)="clickedMarker(m.label, i)"
+                  [latitude]="m.lat"
+                  [longitude]="m.lng"
+                  [label]="m.label"
+                  [markerDraggable]="m.draggable">
+
+        <agm-info-window>
+          <strong>{{m.label}}</strong>
+        </agm-info-window>
+
+      </agm-marker>
+      <agm-circle [(latitude)]="lat" [(longitude)]="lng"
+                  [(radius)]="radio"
+                  [fillColor]="'red'"
+                  [circleDraggable]="true"
+                  [editable]="true">
+      </agm-circle>
+    </agm-map>
+  </div>
+  <div class="Colm" >
+    <button type="button" class="btn btn-primary active btn-lg" (click)="confirmar()" style="margin-left:300px;margin-top:30%;">Subscribirse</button>
+  </div>
+</div>
+</div>

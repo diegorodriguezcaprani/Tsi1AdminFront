@@ -1,0 +1,67 @@
+﻿
+.imagen {
+  display: block;
+  position: absolute;
+  margin-left: 25%;
+  height: 50%;
+  margin-top: 2%;
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+
+.botonSiguiente {
+  position:absolute;
+  display: block;
+  margin-left:77%;
+  margin-top:10%;
+}
+
+.botonAnterior {
+  position: absolute;
+  margin-left: 20%;
+  margin-top: 10%;
+  display: block;
+}
+
+.incidenteCombo {
+  position: absolute;
+  margin-left: 25%;
+  margin-top: 27%;
+  display: block;
+  width:20%;
+}
+
+.incidenteNombre {
+  position: absolute;
+  text-align: center;
+  margin-left: 18%;
+  margin-top: 27.5%;
+  display: block;
+}
+
+.comentario {
+  position: absolute;
+  margin-left: 25%;
+  margin-top: 30%;
+  display: block;
+  width:40%;
+}
+
+.comentarioNombre {
+  position: absolute;
+  text-align: center;
+  margin-left: 18%;
+  margin-top: 30%;
+  display: block;
+}
+
+.enviar {
+  position: absolute;
+  text-align: center;
+  margin-left: 78%;
+  margin-top: 28%;
+  display: block;
+  width:10%;
+}

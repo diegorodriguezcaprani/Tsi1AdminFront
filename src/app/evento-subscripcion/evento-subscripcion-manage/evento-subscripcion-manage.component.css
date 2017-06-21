@@ -1,0 +1,38 @@
+﻿.sebm-google-map-container {
+  height: 500px;
+  width: 500px;
+}
+
+
+
+.container {
+}
+.tabla {
+  width: 600px;
+}
+
+.col1 {
+  width: 50px;
+  text-align: center;
+}
+
+.seleccionados {
+  margin-left: 100px;
+}
+
+.Rowm {
+  display: table;
+}
+
+.Colm {
+  display: table-cell;
+}
+
+.confirmar {
+  margin-left: 150px;
+}
+
+
+.entrada {
+  width: 200px;
+}
