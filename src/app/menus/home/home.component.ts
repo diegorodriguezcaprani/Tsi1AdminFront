@@ -56,6 +56,10 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/reports']);
   }
 
+  public goTiposSensores() {
+      this.router.navigate(['/listTipoSensor']);
+  }
+
   estaCargado(): boolean {
     return this.cargado;
   }
